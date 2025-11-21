@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sea Life Magazine - Full</title>
+<link href="https://fonts.googleapis.com/css2?family=Georgia&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* { box-sizing: border-box; }
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f0f9ff;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.magazine-layout {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 40px 50px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 30px;
+    min-height: calc(100vh - 40px);
+}
+.magazine-header { text-align:center; border-bottom:1px solid #e0f2f8; padding-bottom:20px; margin-bottom:20px;}
+.magazine-header h1 { font-family:'Playfair Display', serif; font-size:3.5em; color:#005f73; margin:0 0 10px 0; font-weight:700;}
+.pet-nav { margin-top: 15px; }
+.pet-nav a { color: #0a9396; text-decoration:none; font-weight:bold; font-size:1.1em; padding:8px 15px; border:1px solid #94d2bd; border-radius:20px; transition: all 0.3s ease; }
+.pet-nav a:hover { background-color:#e0f7f4; color:#003049; border-color:#0a9396; }
+.magazine-content { display:flex; flex-direction:column; gap:30px; }
+.main-article { display:flex; flex-direction:column; gap:30px; }
+.pet-photo-section { position: relative; background-color:#e0f7ff; padding:15px; border-radius:8px; box-shadow: inset 0 0 10px rgba(0,0,0,0.05);}
+.pet-photo { width:100%; border-radius:5px; display:block; }
+.voice-upload { position:absolute; bottom:25px; left:25px; background-color: rgba(0,0,0,0.7); color:#fff; padding:10px 15px; border-radius:25px; display:flex; align-items:center; gap:10px; font-size:0.9em; font-weight:600; cursor:pointer; transition:0.3s;}
+.voice-upload:hover { background-color: rgba(0,0,0,0.85); }
+.voice-upload .fas { font-size:1.2em; color:#00b4d8; }
+.text-columns { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+h2 { font-family:'Playfair Display', serif; font-size:2em; color:#0077b6; margin-top:0; margin-bottom:15px; border-bottom:1px dashed #cce3ef; padding-bottom:5px; }
+.caution-text { background-color:#fff3cd; border-left:5px solid #ffc107; padding:15px; margin-top:20px; font-style:italic; color:#856404; border-radius:4px; }
+.page-btn { display:inline-block; margin:10px 10px 0 0; padding:12px 25px; background-color:#0a9396; color:white; font-size:1.1em; font-weight:bold; border:none; border-radius:30px; cursor:pointer; text-align:center; transition:0.3s;}
+.page-btn:hover { background-color:#007f86; transform:translateY(-2px);}
+.magazine-footer { text-align:center; border-top:1px solid #e0f2f8; padding-top:20px; margin-top:20px; color:#777; font-size:0.9em;}
+.section { display:none; opacity:0; transition: opacity 0.6s ease-in-out; }
+
+.section-item {
+    margin-bottom: 35px;
+}
+.section-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 15px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.section-item p {
+    margin-top: 10px;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+@media(max-width:768px){ 
+    .magazine-layout{padding:20px;} 
+    .magazine-header h1{font-size:2.5em;} 
+    .text-columns{grid-template-columns:1fr; gap:20px;} 
+}
+</style>
+</head>
+<body>
+
+<div class="magazine-layout">
+    <header class="magazine-header">
+        <h1>Sea Life Magazine</h1>
+        <nav class="pet-nav">
+            <a href="#">Home</a>
+            <a href="#">Ocean Species</a>
+            <a href="#">Conservation</a>
+            <a href="#">Gallery</a>
+        </nav>
+    </header>
+
+    <main class="magazine-content">
+
+        <!-- الصفحة الأولى: عن القرش -->
+        <section id="section1" class="section" style="display:block; opacity:1;">
+            <div class="main-article">
+                <div class="pet-photo-section">
+                    <!-- استخدمتي الصورة من Pexels هنا -->
+                    <img src="https://images.pexels.com/photos/26455238/pexels-photo-26455238.jpeg" alt="Shark" class="pet-photo">
+                    <div class="voice-upload">
+                        <i class="fas fa-microphone"></i> Listen to Ocean Sounds
+                    </div>
+                </div>
+                <div class="text-columns">
+                    <div class="column">
+                        <h2>The Mighty Shark</h2>
+                        <p>
+                            Sharks are some of the ocean’s most fascinating and powerful creatures. As apex predators, they help maintain the balance of marine ecosystems by controlling the population of other species. With over 500 known species, they range from small reef sharks to the massive great white. Sharks have highly developed senses, like their ability to detect electrical signals in the water, and they are built for speed and precision in the hunt.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h2>Did You Know?</h2>
+                        <p>
+                            - Sharks have existed for more than 400 million years, making them older than dinosaurs.<br>
+                            - They can detect a single drop of blood from hundreds of meters away.<br>
+                            - The Greenland shark is one of the longest-living vertebrates, with some believed to be over 400 years old.
+                        </p>
+                        <div class="caution-text">
+                            ⚠️ Many shark species are endangered due to overfishing, finning, and habitat degradation. Supporting shark conservation is vital for healthy oceans.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- الصفحة الثانية: الحيوانات الأخرى -->
+        <section id="section2" class="section">
+            <div class="main-article">
+                <div class="section-item">
+                    <h2>About Fish</h2>
+                    <p>Fish are ancient marine creatures found in seas, oceans, and rivers. They come in countless colors, shapes, and sizes. Their adaptations, like gills and fins, allow them to survive and thrive underwater. Fish play a crucial role in the food chain and ecosystems.</p>
+                    <img src="https://images.pexels.com/photos/3163599/pexels-photo-3163599.jpeg" alt="Fish">
+                </div>
+                <div class="section-item">
+                    <h2>The Dolphin</h2>
+                    <p>Dolphins are intelligent and social animals. They communicate using clicks and whistles, perform acrobatics, and hunt cooperatively. Dolphins have strong bonds within pods and are known to help injured members and even humans in some cases.</p>
+                    <img src="https://images.pexels.com/photos/3439576/pexels-photo-3439576.jpeg" alt="Dolphin">
+                </div>
+                <div class="section-item">
+                    <h2>The Sea Turtle</h2>
+                    <p>Sea turtles are long-lived reptiles that migrate across oceans. They help maintain coral reef and seagrass ecosystems. Human threats include pollution, fishing nets, and habitat loss. Conservation efforts are vital to protect these gentle travelers.</p>
+                    <img src="https://images.pexels.com/photos/1618606/pexels-photo-1618606.jpeg" alt="Sea Turtle">
+                </div>
+                <div class="section-item">
+                    <h2>The Octopus</h2>
+                    <p>The octopus is highly intelligent with eight flexible arms. It can change color and texture to camouflage, escape predators, and solve problems. They have complex behaviors like opening jars, using tools, and escaping enclosures, making them one of the smartest invertebrates.</p>
+                    <img src="https://images.pexels.com/photos/13851800/pexels-photo-13851800.jpeg" alt="Octopus">
+                </div>
+            </div>
+        </section>
+
+        <!-- أزرار التنقل -->
+        <div>
+            <button class="page-btn" onclick="showSection('section1')">← Back</button>
+            <button class="page-btn" onclick="showSection('section2')">Next Page →</button>
+        </div>
+
+    </main>
+
+    <footer class="magazine-footer">
+        © 2025 Sea Life Magazine | Dive into the world beneath the waves
+    </footer>
+</div>
+
+<script>
+function showSection(id){
+    ['section1','section2'].forEach(sec => {
+      const el = document.getElementById(sec);
+      if (sec === id) {
+        el.style.display = 'block';
+        setTimeout(() => { el.style.opacity = 1; }, 50);
+      } else {
+        el.style.opacity = 0;
+        setTimeout(() => { el.style.display = 'none'; }, 600);
+      }
+    });
+    window.scrollTo(0,0);
+}
+</script>
+
+</body>
+</html>
